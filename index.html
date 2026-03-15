@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planova</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Planova</h1>
+      <p id="welcomeMessage">Organize your tasks and track your upcoming events.</p>
+    </header>
+
+    <main class="dashboard">
+      <section class="card full-width-card">
+        <div class="calendar-header-row">
+          <h2>Event Calendar</h2>
+
+          <div class="calendar-nav">
+            <button type="button" id="prevMonthBtn" class="calendar-nav-btn">‹</button>
+            <div id="calendarMonthLabel" class="calendar-month-label">Month Year</div>
+            <button type="button" id="nextMonthBtn" class="calendar-nav-btn">›</button>
+          </div>
+        </div>
+
+        <div class="calendar-weekdays">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+
+        <div id="calendarGrid" class="calendar-grid"></div>
+            <div id="selectedDatePanel" class="selected-date-panel">
+            <h3 id="selectedDateTitle">Select a day</h3>
+        <div id="selectedDateItems" class="selected-date-items">
+    <p class="empty-day-message">No day selected yet.</p>
+  </div>
+</div>
+      </section>
+
+      <section class="card">
+        <h2>Tasks</h2>
+
+        <form id="taskForm" class="form">
+          <input type="text" id="taskTitle" placeholder="Enter task..." required />
+
+          <div class="event-form-row">
+            <div class="compact-date-row">
+              <div class="picker-field small-field">
+                <label for="taskDayToggle">Day</label>
+                <button type="button" class="picker-toggle" id="taskDayToggle">Day</button>
+                <div class="picker-dropdown hidden" id="taskDayDropdown">
+                  <div id="taskDayOptions" class="picker-options"></div>
+                </div>
+              </div>
+
+              <div class="picker-field small-field month-field">
+                <label for="taskMonthToggle">Month</label>
+                <button type="button" class="picker-toggle" id="taskMonthToggle">Month</button>
+                <div class="picker-dropdown hidden" id="taskMonthDropdown">
+                  <div id="taskMonthOptions" class="picker-options"></div>
+                </div>
+              </div>
+
+              <div class="picker-field small-field year-field">
+                <label for="taskYearToggle">Year</label>
+                <button type="button" class="picker-toggle" id="taskYearToggle">Year</button>
+                <div class="picker-dropdown hidden" id="taskYearDropdown">
+                  <div id="taskYearOptions" class="picker-options"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit">Add Task</button>
+        </form>
+
+        <div class="task-stats">
+          <span id="totalTasks">Total: 0</span>
+          <span id="completedTasks">Completed: 0</span>
+        </div>
+
+        <ul id="taskList" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Event Countdown</h2>
+
+        <form id="eventForm" class="form">
+          <input type="text" id="eventTitle" placeholder="Enter event..." required />
+
+          <div class="event-form-row">
+            <div class="compact-date-row">
+              <div class="picker-field small-field">
+                <label for="dayToggle">Day</label>
+                <button type="button" class="picker-toggle" id="dayToggle">Day</button>
+                <div class="picker-dropdown hidden" id="dayDropdown">
+                  <div id="dayOptions" class="picker-options"></div>
+                </div>
+              </div>
+
+              <div class="picker-field small-field month-field">
+                <label for="monthToggle">Month</label>
+                <button type="button" class="picker-toggle" id="monthToggle">Month</button>
+                <div class="picker-dropdown hidden" id="monthDropdown">
+                  <div id="monthOptions" class="picker-options"></div>
+                </div>
+              </div>
+
+              <div class="picker-field small-field year-field">
+                <label for="yearToggle">Year</label>
+                <button type="button" class="picker-toggle" id="yearToggle">Year</button>
+                <div class="picker-dropdown hidden" id="yearDropdown">
+                  <div id="yearOptions" class="picker-options"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="digital-time-picker">
+              <label>Time</label>
+
+              <div class="digital-time-box">
+                <div class="time-unit horizontal">
+                  <button type="button" class="time-btn" id="hourDown">−</button>
+                  <div class="time-value" id="hourDisplay">09</div>
+                  <button type="button" class="time-btn" id="hourUp">+</button>
+                </div>
+
+                <div class="time-separator">:</div>
+
+                <div class="time-unit horizontal">
+                  <button type="button" class="time-btn" id="minuteDown">−</button>
+                  <div class="time-value" id="minuteDisplay">00</div>
+                  <button type="button" class="time-btn" id="minuteUp">+</button>
+                </div>
+
+                <div class="ampm-box">
+                  <button type="button" class="ampm-toggle" id="periodToggle">AM</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit">Add Event</button>
+        </form>
+
+        <ul id="eventList" class="list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
