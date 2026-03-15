@@ -35,6 +35,8 @@ Users can then:
 
 All tasks, events, and the user's name are saved in the browser using localStorage, so the data remains available after refreshing the page.
 
+https://kawthar1235.github.io/Planova/
+
 ## Project Structure
 
 ```bash
